@@ -1,0 +1,23 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom{
+    /* top: 100px; */
+    display: flex;
+}
+
+.css-zhqbi4-MuiPaper-root-MuiAppBar-root{
+    height: 12vh !important;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    top:9vh !important;
+    padding-top: 0.5vh ;
+}
+
+.css-cveggr-MuiListItemIcon-root{
+    min-width: 15px !important;
+    align-items: center;
+}

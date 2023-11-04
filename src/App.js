@@ -1,10 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import {Button} from "@mui/material"
+import Header from './navbar/navbar';
+import { Routes,Route } from 'react-router-dom';
+import Home from './components/home';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+ return(
+  <Routes>
+    <Route path='/' Component={Header}>
+        <Route index element={<Home />} />
+        <Route path='account-balance' element={<Home />} />
+        <Route path='payroll' element={<Home />} /> 
+        <Route path='reports' element={<Home />} />
+        <Route path='advisor' element={<Home />} />
+        <Route path='contacts' element={<Home />} />
+    </Route>
+  </Routes>
+ )
+}
+
+{/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +33,6 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
-  );
-}
+      </header> */}
 
 export default App;
