@@ -1,0 +1,9 @@
+.home-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.home-div .child-div{
+    width: 50% !important;
+}

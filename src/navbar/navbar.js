@@ -61,15 +61,15 @@ function Header() {
       >
         <List>
             {
-                iconlists.map((e)=>{
+                iconlists.map((e,i)=>{
                     return(
-                        <CustomListItem to={e.route} primary={e.name}/>
+                        <CustomListItem to={e.route} primary={e.name} key={i}/>
                     )
                 })
             }
         </List>
       </Drawer>
-      <div style={{padding:'1vw'}}>
+      <div style={{padding:'1vw',width:'80%'}}>
       <Outlet />
       </div>
 
