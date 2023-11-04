@@ -1,12 +1,14 @@
 import React from "react";
 
 import { Bar } from "../charts/bar";
-import Line from "../charts/line";
-
+import Line from "../charts/line"; 
 import './home.css'
+
+
 class Home extends React.Component{
-    constructor(){
+    constructor(props){
         super()
+        
         this.state = {
             barData:  [
               {year: 1980, efficiency: 24.3, sales: 8949000},
@@ -50,6 +52,10 @@ class Home extends React.Component{
         this.updateData()
     }
 
+    componentWillUnmount(){
+        localStorage.removeItem('path')
+    }
+
     getRandomNumbers(){
         let arr = []
         for(let i = 0; i < 11;i++){
@@ -63,6 +69,7 @@ class Home extends React.Component{
         this.setState({
             lineData : this.getRandomNumbers()
         })
+        // console.log(this.state.lineData)
     }
     randomNumber(min, max) {
         let mx = max > min ? max : min

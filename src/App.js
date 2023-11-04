@@ -6,18 +6,49 @@ import { Routes,Route } from 'react-router-dom';
 import Home from './components/home';
 
 function App() {
- return(
-  <Routes>
-    <Route path='/' Component={Header}>
-        <Route index element={<Home />} />
-        <Route path='account-balance' element={<Home />} />
-        <Route path='payroll' element={<Home />} /> 
-        <Route path='reports' element={<Home />} />
-        <Route path='advisor' element={<Home />} />
-        <Route path='contacts' element={<Home />} />
-    </Route>
-  </Routes>
- )
+ return (
+   <Routes>
+     <Route path="/" Component={Header}>
+       <Route
+         index
+         Component={(routeProps) => {
+           return <Home {...routeProps} />;
+         }}
+       />
+       <Route
+       path="account-balance"
+       Component={(routeProps) => {
+         return <Home {...routeProps} />;
+       }}
+     />
+     <Route
+       path="payroll"
+       Component={(routeProps) => {
+         return <Home {...routeProps} />;
+       }}
+     />
+     <Route
+       path="reports"
+       Component={(routeProps) => {
+         return <Home {...routeProps} />;
+       }}
+     />
+     <Route
+       path="advisor"
+       Component={(routeProps) => {
+         return <Home {...routeProps} />;
+       }}
+     />
+     <Route
+       path="contacts"
+       Component={(routeProps) => {
+         return <Home {...routeProps} />;
+       }}
+     />
+     </Route>
+     
+   </Routes>
+ );
 }
 
 {/* <header className="App-header">

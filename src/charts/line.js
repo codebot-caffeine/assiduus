@@ -5,10 +5,11 @@ import { useLocation } from "react-router-dom";
 const Line = (props) => {
   const svgRef = useRef();
   const [data,setData] = useState(props.lineData)
-
+  
   useEffect(() => {
     // setting up svg
     setData(props.lineData)
+    console.log(data)
     const w = 400;
     const h = 200;
     const svg = d3
