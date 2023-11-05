@@ -59,7 +59,7 @@ export const Bar = (props) => {
 
       svg
         .select(".plot-area")
-        .attr("fill", "steelblue")
+        .attr("fill", "green")
         .selectAll(".bar")
         .data(data)
         .join("rect")

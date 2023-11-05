@@ -8,16 +8,17 @@ const Line = (props) => {
   
   useEffect(() => {
     // setting up svg
+    d3.select(svgRef.current).selectAll('*').remove();
     setData(props.lineData)
+    
     const w = 400;
-    const h = 200;
+    const h = 300;
     const svg = d3
       .select(svgRef.current)
       .attr("width", h)
       .attr("height", h)
       .style("overflow", "visible")
       .style("background", "")
-
     // setting the scaleing
     // xscales
     const xScale = d3
@@ -26,7 +27,7 @@ const Line = (props) => {
       .range([0, w]);
     //yscales
     const yScale = d3.scaleLinear().domain([0, h]).range([h, 0]);
-
+    
     //  Setup functions to draw Lines ---------------//
     const generateScaledLine = d3
       .line()
@@ -40,9 +41,9 @@ const Line = (props) => {
       .ticks(1 + data.length)
       .tickFormat((i) => i + 1);
     const yAxis = d3.axisLeft(yScale).ticks(7);
+    
     svg.append("g").call(xAxis).attr("transform", `translate(0,${h})`);
     svg.append("g").call(yAxis);
-
     // setting up the data for the svg
     svg
       .selectAll(".line")
@@ -50,7 +51,7 @@ const Line = (props) => {
       .join("path")
       .attr("d", (d) => generateScaledLine(d))
       .attr("fill", "none")
-      .attr("stroke", "black")
+      .attr("stroke", "green")
       .attr("x", (d, i) => i * (w / data.length))
       .attr("y", (d) => h - d * (h / 100))
       .attr("width", 0.8 * (w / data.length))

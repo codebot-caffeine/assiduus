@@ -24,7 +24,7 @@ function Header() {
         let Icon = primary === "Dashboard" ? DashboardIcon :  primary === "Accounts" ? AccountBalanceWalletIcon : primary === "Payroll" ? AttachMoneyIcon 
         :  primary === "Reports" ? DescriptionIcon : primary === "Advisor" ? PersonIcon:primary === "Contacts" ? ContactsIcon: DashboardIcon
         return(
-        <div style={{display:"flex",background:to === location.pathname ? "black" : "",color:to === location.pathname ? "white" : ""}}>
+        <div style={{display:"flex",background:to === location.pathname ? "green" : "",color:to === location.pathname ? "white" : ""}}>
         <ListItemIcon>
         <Icon
               style={to === location.pathname ? { color: "white" } : {}}
