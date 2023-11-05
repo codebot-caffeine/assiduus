@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import { useLocation } from "react-router-dom";
+import "./sizes.css"
 
 const Line = (props) => {
   const svgRef = useRef();
@@ -9,7 +9,6 @@ const Line = (props) => {
   useEffect(() => {
     // setting up svg
     setData(props.lineData)
-    console.log(data)
     const w = 400;
     const h = 200;
     const svg = d3
@@ -51,13 +50,26 @@ const Line = (props) => {
       .join("path")
       .attr("d", (d) => generateScaledLine(d))
       .attr("fill", "none")
-      .attr("stroke", "black");
+      .attr("stroke", "black")
+      .attr("x", (d, i) => i * (w / data.length))
+      .attr("y", (d) => h - d * (h / 100))
+      .attr("width", 0.8 * (w / data.length))
+      .attr("height", (d) => d * (h / 100));
 
   }, [props.lineData]);
   return (
     <div>
         {/* <h2>Line Charts</h2> */}
-      <svg ref={svgRef} style={{ margin: "100px", display: "block" }}></svg>
+      <svg ref={svgRef} style={{
+        // height: "40vh",
+        // width: "90%",
+        // marginRight: "0px",
+        // marginLeft: "0px",
+        // margin: "100px", 
+        display: "block",
+        padding:"0px 0px 0px 0px",
+        alignSelf: "center"
+      }} ></svg>
     </div>
   );
 };

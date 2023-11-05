@@ -69,7 +69,7 @@ function Header() {
             }
         </List>
       </Drawer>
-      <div style={{padding:'1vw',width:'80%'}}>
+      <div style={{padding:'2vw',width:'85%',backgroundColor:"#ececec"}}>
       <Outlet />
       </div>
 

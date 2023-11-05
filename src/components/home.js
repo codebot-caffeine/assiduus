@@ -1,105 +1,130 @@
 import React from "react";
 
 import { Bar } from "../charts/bar";
-import Line from "../charts/line"; 
-import './home.css'
+import Line from "../charts/line";
+import "./home.css";
 
+//bootstrap cards
+import { Card, CardContent, CardActions } from "@mui/material";
 
-class Home extends React.Component{
-    constructor(props){
-        super()
-        
-        this.state = {
-            barData:  [
-              {year: 1980, efficiency: 24.3, sales: 8949000},
-              {year: 1985, efficiency: 27.6, sales: 10979000},
-              {year: 1990, efficiency: 28, sales: 9303000},
-              {year: 1991, efficiency: 28.4, sales: 8185000},
-              {year: 1992, efficiency: 27.9, sales: 8213000},
-              {year: 1993, efficiency: 28.4, sales: 8518000},
-              {year: 1994, efficiency: 28.3, sales: 8991000},
-              {year: 1995, efficiency: 28.6, sales: 8620000},
-              {year: 1996, efficiency: 28.5, sales: 8479000},
-              {year: 1997, efficiency: 28.7, sales: 8217000},
-              {year: 1998, efficiency: 28.8, sales: 8085000},
-              {year: 1999, efficiency: 28.3, sales: 8638000},
-              {year: 2000, efficiency: 28.5, sales: 8778000},
-              {year: 2001, efficiency: 28.8, sales: 8352000},
-              {year: 2002, efficiency: 29, sales: 8042000},
-              {year: 2003, efficiency: 29.5, sales: 7556000},
-              {year: 2004, efficiency: 29.5, sales: 7483000},
-              {year: 2005, efficiency: 30.3, sales: 7660000},
-              {year: 2006, efficiency: 30.1, sales: 7762000},
-              {year: 2007, efficiency: 31.2, sales: 7562000},
-              {year: 2008, efficiency: 31.5, sales: 6769000},
-              {year: 2009, efficiency: 32.9, sales: 5402000},
-              {year: 2010, efficiency: 33.9, sales: 5636000},
-              {year: 2011, efficiency: 33.1, sales: 6093000},
-              {year: 2012, efficiency: 35.3, sales: 7245000},
-              {year: 2013, efficiency: 36.4, sales: 7586000},
-              {year: 2014, efficiency: 36.5, sales: 7708000},
-              {year: 2015, efficiency: 37.2, sales: 7517000},
-              {year: 2016, efficiency: 37.7, sales: 6873000},
-              {year: 2017, efficiency: 39.4, sales: 6081000},
-            ],
-            lineData: []
-        }
-    }
-    componentDidMount(){
-        this.setState({
-            lineData : []
-        })
-        this.updateData()
-    }
+import Container from "react-bootstrap/Container";
 
-    componentWillUnmount(){
-        localStorage.removeItem('path')
-    }
+class Home extends React.Component {
+  constructor(props) {
+    super();
 
-    getRandomNumbers(){
-        let arr = []
-        for(let i = 0; i < 11;i++){
-            arr.push(this.randomNumber(Math.random(),Math.random()))
-        }
-        // console.log(arr)
-        return arr
-    }
+    this.state = {
+      barData: [],
+      lineData: [],
+    };
+  }
+  componentDidMount() {
+    this.setState({
+      lineData: [],
+    });
+    this.updateData();
+  }
 
-    updateData(){
-        this.setState({
-            lineData : this.getRandomNumbers()
-        })
-        // console.log(this.state.lineData)
+  getRandomNumbers() {
+    let arr = [];
+    for (let i = 0; i < 11; i++) {
+      arr.push(this.randomNumber(Math.random(), Math.random()));
     }
-    randomNumber(min, max) {
-        let mx = max > min ? max : min
-        let mn = max < min ? max : min
-        return Math.floor((Math.random() * (mx - mn) + mn) * 100);
-    }
+    // console.log(arr)
+    return arr;
+  }
 
-    render(){
-        return (
-            <>
-            <h2> D3 chart comes here</h2>
-            <div className="home-div">
-                <div className="child-div">
-                <Line lineData={this.state.lineData}/>              
+  getRandomNumbersBardata() {
+    let arr = [
+      { year: 2021, sales: this.randomNumber(Math.random(), Math.random()) },
+      { year: 2022, sales: this.randomNumber(Math.random(), Math.random()) },
+      { year: 2023, sales: this.randomNumber(Math.random(), Math.random()) },
+      { year: 2024, sales: this.randomNumber(Math.random(), Math.random()) },
+      { year: 2025, sales: this.randomNumber(Math.random(), Math.random()) },
+    ];
+
+    // console.log(arr)
+    return arr;
+  }
+
+  updateData() {
+    this.setState({
+      lineData: this.getRandomNumbers(),
+      barData: this.getRandomNumbersBardata(),
+    });
+    // console.log(this.state.lineData)
+  }
+  randomNumber(min, max) {
+    let mx = max > min ? max : min;
+    let mn = max < min ? max : min;
+    return Math.floor((Math.random() * (mx - mn) + mn) * 100);
+  }
+
+  render() {
+    return (
+      <div className="home-div">
+        {/* <div className="home-div">
+              <div className="child-div">
+                <div className="paragraphblock">
+                  <p>Checking Account</p>
+                  <span></span>
                 </div>
-                <div className="child-div">
-                <Bar barData={this.state.barData}/>
+                <div>
+                  <Line lineData={this.state.lineData} />
                 </div>
-                <div className="child-div">
-                <Bar barData={this.state.barData}/>
-                </div>
-                <div className="child-div">
-                {/* <Line  lineData={this.state.lineData}/> */}
-                </div>
-                
-            </div>
-            </>
-        )
-    }
+              </div>
+              <div className="child-div">
+                <Bar barData={this.state.barData} />
+              </div>
+              <div className="child-div">
+                <Bar barData={this.state.barData} />
+              </div>
+              <div className="child-div">
+              </div>
+            </div> */}
+        <Card style={{width: "40%",margin:"2vw"}}>
+          <CardActions>
+            <p>Checking Account</p>
+            <span></span>
+          </CardActions>
+          <hr />
+          <CardContent style={{paddingLeft:"50px"}}>
+          <Line lineData={this.state.lineData} />
+          </CardContent>
+        </Card>
+        <Card style={{width: "40%" ,margin:"2vw"}}>
+          <CardActions>
+            <p>Checking Account</p>
+            <span></span>
+          </CardActions>
+          <hr />
+          <CardContent style={{paddingLeft:"50px"}}>
+          <Bar barData={this.state.barData} />
+          </CardContent>
+        </Card>
+        <Card style={{width: "40%" ,margin:"2vw"}}>
+          <CardActions>
+            <p>Checking Account</p>
+            <span></span>
+          </CardActions>
+          <hr />
+          <CardContent style={{paddingLeft:"50px"}}>
+          <Bar barData={this.state.barData} />
+          </CardContent>
+        </Card>
+        <Card style={{width: "40%",margin:"2vw"}}>
+          <CardActions>
+            <p>Checking Account</p>
+            <span></span>
+          </CardActions>
+          <hr />
+          <CardContent style={{paddingLeft:"50px"}}>
+          <Line lineData={this.state.lineData} />
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 }
 
-
-export default Home
+export default Home;

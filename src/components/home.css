@@ -5,5 +5,45 @@
 }
 
 .home-div .child-div{
-    width: 50% !important;
+    display: flex;
+    flex-direction: column;
+    width: 45% !important;
+    border-radius: 5px;
+    background-color: white;
+    margin: 2% !important;
+    align-items: center;
+    height: 50vh;
+    padding: auto;
 }
+
+.home-div .paragraphblock{
+    border-bottom: solid;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+@media screen and (max-width: 1336px) {
+    .home-div .child-div{
+        height: 45vh;
+    }
+    
+}
+
+@media screen and (max-width: 1920px) {
+    .home-div{
+        padding:0px 0px 0px 70px
+    }
+    .home-div .child-div{
+        width: 40% !important;
+        height: 40%;
+        align-items: center;
+        padding-right: 45px;
+    }
+    
+}
+
+.cardStyle{ 
+    float: 'left';
+    width: '400px';
+    margin: '10px';
+ };
