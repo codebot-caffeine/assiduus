@@ -1,6 +1,6 @@
 @media screen and (max-width:1280px) {
     .svgWidth{
-        height: 45vh;
-        width: 90%
+        height: 45vh !important;
+        width: 90% !important
     }
 }
