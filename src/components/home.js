@@ -88,8 +88,8 @@ class Home extends React.Component {
           <CardActions style={{justifyContent:"space-between"}}>
             <p>Checking Account</p>
             <div style={{justifyContent:"space-between"}}>
-              <Button variant="outlined" style={{marginRight:"3px",borderColor:"ButtonHighlight"}} onClick={this.updateData}>Manage</Button>
-               <select onChange={this.updateData}>
+              <Button variant="outlined" style={{marginRight:"3px",borderColor:"ButtonHighlight",color:"green"}} onClick={this.updateData}>Manage</Button>
+               <select onChange={this.updateData} style={{marginRight:"3px",borderColor:"ButtonHighlight",color:"green"}}>
                 {this.state.months.map((e)=> (<option value={e}> {e}</option>))}
                </select>
             </div>
@@ -102,7 +102,7 @@ class Home extends React.Component {
         <Card style={{width: "40%" ,margin:"2vw"}}>
           <CardActions style={{justifyContent:"space-between"}}>
             <p>Invoices owed to you</p>
-            <Button variant="outlined" style={{marginRight:"3px",borderColor:"ButtonHighlight"}} onClick={this.handleClick}> New Sales Invoice</Button>
+            <Button variant="outlined" style={{marginRight:"3px",borderColor:"ButtonHighlight",color:"green"}} onClick={this.handleClick}> New Sales Invoice</Button>
           </CardActions>
           <hr />
           <CardContent style={{paddingLeft:"50px"}}>
