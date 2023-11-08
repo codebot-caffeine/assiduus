@@ -11,7 +11,7 @@ const Line = (props) => {
     d3.select(svgRef.current).selectAll('*').remove();
     setData(props.lineData)
     
-    const w = 400;
+    const w = props.width > 1500 ? 380 : props.width < 1500 && props.width > 1300 ? 300 : props.width < 1300 ? 250 : 250
     const h = 300;
     const svg = d3
       .select(svgRef.current)

@@ -151,7 +151,7 @@ class Home extends React.Component {
           </CardActions>
           <hr />
           <CardContent style={{ paddingLeft: "50px", alignItems: "center" }}>
-            <Line lineData={this.state.lineData} />
+            <Line lineData={this.state.lineData} width={window.innerWidth} height = {window.innerHeight} />
           </CardContent>
         </Card>
         <Card style={{ width: "40%", margin: "2vw" }}>
