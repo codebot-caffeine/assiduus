@@ -48,6 +48,7 @@ function Header() {
     return (
     <>
     <div className="main">
+      <div>
       <AppBar position="static" style={{background: '#fff',position:"fixed"}}>
         <Toolbar style={{display:"flex",justifyContent:'space-between'}}>
           <Typography>
@@ -65,6 +66,7 @@ function Header() {
           
         </Toolbar>
       </AppBar>
+      </div>
       <div className="bottom">
       <Drawer
         variant="permanent"
@@ -73,6 +75,7 @@ function Header() {
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: { width: 200, boxSizing: 'border-box' },
           }}
+        style={{marginTop:"10vw"}}
         
       >
         <List>
