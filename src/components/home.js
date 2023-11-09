@@ -59,7 +59,7 @@ class Home extends React.Component {
   }
   componentDidMount() {
     this.setState({
-      lineData: [],
+      lineData: this.getRandomNumbers(),
       barData: [],
     });
     this.updateData();
