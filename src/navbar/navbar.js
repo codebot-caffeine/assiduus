@@ -12,7 +12,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import {useLocation,Link, Outlet} from 'react-router-dom'
-import './navbar.css'
+import './Navbar.css'
 
 function Header() {
 

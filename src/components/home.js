@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Bar } from "../charts/bar";
-import Line from "../charts/line";
-import "./home.css";
+import { Bar } from "../charts/Bar";
+import { Line } from "../charts/LineChart";
+import "./Home.css";
 
 //bootstrap cards
 import { Card, CardContent, CardActions, Button } from "@mui/material";

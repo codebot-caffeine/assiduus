@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import "./sizes.css"
+import "./Sizes.css"
 
-const Line = (props) => {
+export const Line = (props) => {
   const svgRef = useRef();
   const [data,setData] = useState(props.lineData)
   
@@ -74,5 +74,3 @@ const Line = (props) => {
     </div>
   );
 };
-
-export default Line;
