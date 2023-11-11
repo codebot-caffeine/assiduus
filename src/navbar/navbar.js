@@ -29,7 +29,7 @@ function Header() {
         :  primary === "Reports" ? DescriptionIcon : primary === "Advisor" ? PersonIcon:primary === "Contacts" ? ContactsIcon: DashboardIcon
         return(
         <div style={{display:"flex",background:to === location.pathname ? "green" : "",color:to === location.pathname ? "white" : ""}}>
-        <ListItemIcon>
+        <ListItemIcon style={{alignSelf:"center"}}>
         <Icon
               style={to === location.pathname ? { color: "white" } : {}}
         />
