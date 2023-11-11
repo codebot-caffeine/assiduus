@@ -6,15 +6,20 @@
 .bottom{
     /* top: 100px; */
     display: flex;
+    top: 9vh !important;
 }
 
-.css-zhqbi4-MuiPaper-root-MuiAppBar-root{
+AppBar{
     height: 12vh !important;
 }
 
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
-    top:9vh !important;
+Drawer{
+    top:2vh !important;
     padding-top: 0.5vh ;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    position: static !important;
 }
 
 .css-cveggr-MuiListItemIcon-root{
