@@ -133,7 +133,7 @@ class Home extends React.Component {
                 }}
                 onClick={this.updateData}
               >
-                Manage
+                Manage data
               </Button>
               <select
                 onChange={this.updateData}
