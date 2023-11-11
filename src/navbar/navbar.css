@@ -6,7 +6,7 @@
 .bottom{
     /* top: 100px; */
     display: flex;
-    top: 9vh !important;
+top: 2vh !important;
 }
 
 AppBar{
@@ -18,7 +18,7 @@ Drawer{
     padding-top: 0.5vh ;
 }
 
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+.MuiPaper-root{
     position: static !important;
 }
 
