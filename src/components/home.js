@@ -32,7 +32,7 @@ class Home extends React.Component {
     
     this.state = {
       barData: [],
-      lineData: [],
+      lineData: this.getRandomNumbers(),
       months: [
         "January",
         "February",
@@ -133,7 +133,7 @@ class Home extends React.Component {
                 }}
                 onClick={this.updateData}
               >
-                Manage data
+                Manage
               </Button>
               <select
                 onChange={this.updateData}
